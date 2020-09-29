@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.ResponseBean;
@@ -20,7 +21,7 @@ public class SkillController {
 	SkillDao skillDao;
 	
 	@PostMapping("/skill")
-	public ResponseBean<SkillBean> addSkill(SkillBean skillBean)
+	public ResponseBean<SkillBean> addSkill(@RequestBody SkillBean skillBean)
 	{
 		skillDao.insertSkill(skillBean);
 		ResponseBean<SkillBean> responseBean = new ResponseBean<>();
