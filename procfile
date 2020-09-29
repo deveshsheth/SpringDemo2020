@@ -1,1 +1,0 @@
-web: java -Dserve.port=$PORT -jar target/*.war
